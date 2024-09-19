@@ -29,6 +29,9 @@ app.get('/', (req, res) => {
   res.send('Marvel Champions Event Manager Backend');
 });
 
+// Routes
+app.use('/api/auth', require('./routes/auth'));
+
 // Socket.io connection
 io.on('connection', (socket) => {
   console.log('New client connected:', socket.id);
