@@ -22,7 +22,9 @@ connectDB();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: '*', // Replace '*' with your frontend URL in production
+}));
 
 // Simple route
 app.get('/', (req, res) => {
@@ -42,7 +44,7 @@ io.on('connection', (socket) => {
 });
 
 // Start server
-const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => {
+const PORT = process.env.PORT || 5001;
+server.listen(PORT, '0.0.0.0', () => {
   console.log(`Backend server is running on port ${PORT}`);
 });
