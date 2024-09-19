@@ -57,10 +57,6 @@ Thumbs.db
 .nuxt
 dist/
 
-# Gatsby files
-.cache/
-public
-
 # VuePress build output
 .vuepress/dist
 
